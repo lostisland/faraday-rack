@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 require 'faraday'
-require 'faraday/my_adapter'
+require 'faraday/rack'
 # This is the magic bit. It requires a tests suite from the Faraday gem that you can run against your adapter
 require 'faraday_specs_setup'
+require_relative 'support/webmock_rack_app'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
