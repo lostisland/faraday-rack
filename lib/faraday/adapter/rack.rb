@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'rack/test'
+
 module Faraday
   class Adapter
     # Sends requests to a Rack app.
@@ -16,8 +18,6 @@ module Faraday
     #     conn.adapter :rack, MyRackApp.new
     #   end
     class Rack < Faraday::Adapter
-      dependency 'rack/test'
-
       # not prefixed with "HTTP_"
       SPECIAL_HEADERS = %w[CONTENT_LENGTH CONTENT_TYPE].freeze
 
