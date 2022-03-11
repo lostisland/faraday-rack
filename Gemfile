@@ -3,7 +3,6 @@
 source 'https://rubygems.org'
 gemspec
 
-gem 'faraday', '~> 1.0'
 gem 'multipart-parser', '~> 0.1.1'
 gem 'rack-test', '>= 0.6'
 gem 'rake', '~> 13.0'

@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'faraday'
 require 'faraday/adapter/rack'
 require 'faraday/rack/version'
 
