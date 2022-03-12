@@ -10,7 +10,6 @@ Add these lines to your application's Gemfile:
 
 ```ruby
 gem 'rack'
-gem 'faraday'
 gem 'faraday-rack'
 ```
 
@@ -20,7 +19,7 @@ And then execute:
 
 Or install them yourself as:
 
-    $ gem install rack faraday faraday-rack
+    $ gem install rack faraday-rack
 
 ## Usage
 
