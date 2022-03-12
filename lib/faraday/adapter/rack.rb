@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rack/test'
+require 'timeout'
 
 module Faraday
   class Adapter
@@ -40,7 +41,7 @@ module Faraday
         timeout = request_timeout(:open, env[:request])
         timeout ||= request_timeout(:read, env[:request])
         response = if timeout
-                     Timer.timeout(timeout, Faraday::TimeoutError) do
+                     ::Timeout.timeout(timeout, Faraday::TimeoutError) do
                        execute_request(env, rack_env)
                      end
                    else
