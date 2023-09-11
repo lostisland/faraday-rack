@@ -50,7 +50,7 @@ module Faraday
 
         if (req = env[:request]).stream_response?
           warn "Streaming downloads for #{self.class.name} " \
-            'are not yet implemented.'
+               'are not yet implemented.'
           req.on_data.call(response.body, response.body.bytesize)
         end
 
