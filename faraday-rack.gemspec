@@ -25,4 +25,5 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_runtime_dependency 'faraday', '~> 2.0'
+  spec.metadata['rubygems_mfa_required'] = 'true'
 end
