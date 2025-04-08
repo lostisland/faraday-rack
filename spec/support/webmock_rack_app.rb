@@ -49,7 +49,9 @@ class WebmockRackApp
   end
 
   def req_body(env)
-    env['rack.input'].read
+    if rack_input = env['rack.input']
+      rack_input.read
+    end
   end
 
   def process_response(req_signature)
