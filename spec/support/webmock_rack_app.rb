@@ -44,8 +44,7 @@ class WebmockRackApp
                       .map { |k, v| [k[5..-1], v] }
                       .to_h
 
-    special_headers = Faraday::Adapter::Rack::SPECIAL_HEADERS
-    http_headers.merge(env.select { |k, _| special_headers.include?(k) })
+    http_headers.merge(env.slice(*Faraday::Adapter::Rack::SPECIAL_HEADERS))
   end
 
   def req_body(env)
