@@ -41,8 +41,7 @@ class WebmockRackApp
 
   def req_headers(env)
     http_headers = env.select { |k, _| k.start_with?('HTTP_') }
-                      .map { |k, v| [k[5..], v] }
-                      .to_h
+                      .transform_keys { |k| k[5..] }
 
     http_headers.merge(env.slice(*Faraday::Adapter::Rack::SPECIAL_HEADERS))
   end
